@@ -76,7 +76,7 @@ def song(_, message):
         )
         m.delete()
     except Exception as e:
-        m.edit("ℹ️ البوت لايعمل من فضلك إبلغ المطور بشأني @Tom_01157")
+        m.edit("ℹ️ البوت لايعمل من فضلك إبلغ المطور بشأني @T_0_M_2")
         print(e)
 
     try:
