@@ -88,7 +88,7 @@ async def start_(c: Client, message: Message):
  انا بوت لتشغيل الاغاني في المجموعات اعمل على سورس توم بمميزات عديدة
 -› [ᗪᗴᐯ. TOᗰ 𖢅](http://t.me/Tom_01157)
 -› [ᔕOᑌᖇᑕE TOᗰ 𖢅](http://t.me/Tom01255)
-photo=f"https://telegra.ph//file/cdcf6e35335e7a01f0948.jpg"
+"https://telegra.ph//file/cdcf6e35335e7a01f0948.jpg"
 """,
         reply_markup=InlineKeyboardMarkup(
             [
