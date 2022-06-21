@@ -132,7 +132,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             await m.reply_photo(
                 photo=image,
                 reply_markup=InlineKeyboardMarkup(buttons),
-                caption=f"-› **اެبشࢪ عيني ضفتها ݪݪانتضاࢪ -› ** `{pos}`\n\n"
+                caption=f"-› **ضيفتها يا حب في قائمة الانتظار -› ** `{pos}`\n\n"
                         f"-› **اެݪاسم:** [{songname}]({link}) | `الاغنية`\n"
                         f"-› **اެݪمدةه:** `{duration}`\n"
                         f"-› **طݪب اެݪحݪۅ:** {requester}",
@@ -173,7 +173,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             except (NoActiveGroupCall, GroupCallNotFound):
                 await suhu.delete()
                 await remove_active_chat(chat_id)
-                await m.reply_text("🦴 شلون اشغل اغنية وماكو مكالمة بلكروب.\n\n-› اكتب .اصعد وحاول مره اخرى !")
+                await m.reply_text("🦴  اشغل ازاي ومفيش مكالمة جماعية بلكروب شغاله   .\n\n-› اكتب .اصعد وحاول مره اخرى !")
             except Exception as e:
                 LOGS.info(e)
     else:
@@ -182,7 +182,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
         )
 
 
-@Client.on_message(command(["شغل", f"تشغيل"]) & other_filters)
+@Client.on_message(command(["شغل", f"تشغيل","توم"]) & other_filters)
 @check_blacklist()
 @require_admin(permissions=["can_manage_voice_chats", "can_delete_messages", "can_invite_users"], self=True)
 async def audio_stream(c: Client, m: Message):
@@ -199,7 +199,7 @@ async def audio_stream(c: Client, m: Message):
         b = await c.get_chat_member(chat_id, ubot)
         if b.status == "banned":
             try:
-                await m.reply_text("المساعد محظور ، ارفع الحظر عنة واكتب .تحديث وبعدين اكتب انضم حتى تكدر تشغل 🤍")
+                await m.reply_text("المساعد محظور ، ارفع الحظر عنة واكتب .تحديث وبعدين اكتب انضم علشان تقدر تشغل 🤍")
                 await remove_active_chat(chat_id)
             except BaseException:
                 pass
@@ -271,7 +271,7 @@ async def audio_stream(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=InlineKeyboardMarkup(buttons),
-                                caption=f"-› **اެبشࢪ عيني ضفتها ݪݪانتضاࢪ -› ** `{pos}`\n\n-› **اެݪاسم:** [{songname}]({url}) | `الاغنية`\n**-› اެݪمدةه:** `{duration}`\n-› **طݪب اެݪحݪۅ:** {requester}",
+                                caption=f"-› **ضيفتها يا حب في قائمة الانتظار  -› ** `{pos}`\n\n-› **اެݪاسم:** [{songname}]({url}) | `الاغنية`\n**-› اެݪمدةه:** `{duration}`\n-› **طݪب اެݪحݪۅ:** {requester}",
                             )
                             remove_if_exists(image)
                         else:
@@ -302,7 +302,7 @@ async def audio_stream(c: Client, m: Message):
                             except (NoActiveGroupCall, GroupCallNotFound):
                                 await suhu.delete()
                                 await remove_active_chat(chat_id)
-                                await m.reply_text("🦴 شلون اشغل وماكو مكالمة جماعية بلكروب.\n\n-› اكتب .اصعد وحاول مره اخرى")
+                                await m.reply_text("🦴  اشغل ازاي ومفيش مكالمة جماعية بلكروب شغاله   .\n\n-› اكتب .اصعد وحاول مره اخرى")
                             except NoAudioSourceFound:
                                 await suhu.delete()
                                 await remove_active_chat(chat_id)
@@ -346,7 +346,7 @@ async def audio_stream(c: Client, m: Message):
                         await m.reply_photo(
                             photo=image,
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"-› **اެبشࢪ عيني ضفتها ݪݪانتضاࢪ -› ** `{pos}`\n\n-› **اެݪاسم:** [{songname}]({url}) | `الاغنية`\n**-› اެݪمدةه:** `{duration}`\n-› **طݪب اެݪحݪۅ:** {requester}",
+                            caption=f"-› **ضيفتها يا حب في قائمة الانتظار -› ** `{pos}`\n\n-› **اެݪاسم:** [{songname}]({url}) | `الاغنية`\n**-› اެݪمدةه:** `{duration}`\n-› **طݪب اެݪحݪۅ:** {requester}",
                         )
                         remove_if_exists(image)
                     else:
@@ -375,7 +375,7 @@ async def audio_stream(c: Client, m: Message):
                         except (NoActiveGroupCall, GroupCallNotFound):
                             await suhu.delete()
                             await remove_active_chat(chat_id)
-                            await m.reply_text("🦴 شلون اشغل وماكو مكالمة جماعية بلكروب.\n\n-› اكتب .اصعد وحاول مره أخرى")
+                            await m.reply_text("🦴 اشغل ازاي ومفيش مكالمة جماعية بلكروب شغاله.\n\n-› اكتب .اصعد وحاول مره أخرى")
                         except NoAudioSourceFound:
                             await suhu.delete()
                             await remove_active_chat(chat_id)
