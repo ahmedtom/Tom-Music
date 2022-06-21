@@ -84,7 +84,6 @@ async def start_(c: Client, message: Message):
     user_id = message.from_user.id
     await add_served_user(user_id)
     await message.reply_text(
-photo=f"https://telegra.ph//file/cdcf6e35335e7a01f0948.jpg",
         f"""ههݪاެ يا حب {message.from_user.mention()} ❤️‍🔥\n
  انا بوت لتشغيل الاغاني في المجموعات اعمل على سورس توم بمميزات عديدة
 -› [ᗪᗴᐯ. TOᗰ 𖢅](http://t.me/Tom_01157)
