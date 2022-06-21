@@ -88,8 +88,14 @@ async def start_(c: Client, message: Message):
  انا بوت لتشغيل الاغاني في المجموعات اعمل على سورس توم بمميزات عديدة
 -› [ᗪᗴᐯ. TOᗰ 𖢅](http://t.me/Tom_01157)
 -› [ᔕOᑌᖇᑕE TOᗰ 𖢅](http://t.me/Tom01255)
-tom = "https://telegra.ph//file/cdcf6e35335e7a01f0948.jpg"
-print (tom)
+)
+    text = f"**- تابع الاوامر في الاسفل ↓ **"
+    await c.send_photo(
+        chat_id,
+        photo=f"https://telegra.ph//file/cdcf6e35335e7a01f0948.jpg",
+        caption=text,
+        reply_markup=buttons,
+    )
 """,
         reply_markup=InlineKeyboardMarkup(
             [
