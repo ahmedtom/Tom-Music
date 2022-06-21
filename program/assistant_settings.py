@@ -75,7 +75,7 @@ async def leave_chat(c :Client, m: Message):
             return await c.send_message(chat_id, "✅ اديني غاير شوف مين هيغنيلكو باي        ")
         else:
             await user.leave_chat(chat_id)
-            return await c.send_message(chat_id, "✅ طالع اهو باي   )
+            return await c.send_message(chat_id, "✅ طالع اهو باي   ")
     except UserNotParticipant:
         return await c.send_message(chat_id, "🦴 غادر منزمان ")
 
