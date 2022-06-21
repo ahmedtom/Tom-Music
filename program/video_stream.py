@@ -149,7 +149,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             await m.reply_photo(
                 photo=image,
                 reply_markup=InlineKeyboardMarkup(buttons),
-                caption=f"-› **اެبشࢪ عيني ضفتها ݪݪانتضاࢪ »** `{pos}`\n\n"
+                caption=f"-› **ضيفتها يا حب في قائمة الانتظار  »** `{pos}`\n\n"
                         f"-› **اެݪاسم:** [{songname}]({link}) | `الفيديو`\n"
                         f"-› **اެݪمدةه:** `{duration}`\n"
                         f"-› **طݪب اެݪحݪۅ:** {requester}",
@@ -196,7 +196,7 @@ async def play_tg_file(c: Client, m: Message, replied: Message = None, link: str
             except (NoActiveGroupCall, GroupCallNotFound):
                 await loser.delete()
                 await remove_active_chat(chat_id)
-                await m.reply_text("🦴 ماكو مكالمة شلون اشغل يلا اكتب.\n\n» هاي .اصعد وحاول مره اخرى !")
+                await m.reply_text("🦴 مفيش مكالمة شغاله اشغل ازاي قولي.\n\n» هاي .اصعد وحاول مره اخرى !")
             except Exception as e:
                 LOGS.info(f"[ERROR]: {e}")
     else:
@@ -294,7 +294,7 @@ async def video_stream(c: Client, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=InlineKeyboardMarkup(buttons),
-                                caption=f"-› **اެبشࢪ عيني ضفتها للانتضار -› ** `{pos}`\n\n-› **اެݪاسم:** [{songname}]({url}) | `الفيديو`\n-›  **اެݪمدةه:** `{duration}`\n-› **طݪب اެݪحݪۅ:** {requester}",
+                                caption=f"-› **ضيفتها يا حب في قائمة الانتظار  -› ** `{pos}`\n\n-› **اެݪاسم:** [{songname}]({url}) | `الفيديو`\n-›  **اެݪمدةه:** `{duration}`\n-› **طݪب اެݪحݪۅ:** {requester}",
                             )
                             remove_if_exists(image)
                         else:
@@ -324,7 +324,7 @@ async def video_stream(c: Client, m: Message):
                             except (NoActiveGroupCall, GroupCallNotFound):
                                 await loser.delete()
                                 await remove_active_chat(chat_id)
-                                await m.reply_text("🦴 ماكو مكالمة شلون اشغل يلا اكتب.\n\n» هاي .اصعد وحاول مره اخرى !")
+                                await m.reply_text("🦴 مفيش مكالمة شغاله اشغل ازاي قولي.\n\n» هاي .اصعد وحاول مره اخرى !")
                             except NoVideoSourceFound:
                                 await loser.delete()
                                 await remove_active_chat(chat_id)
@@ -373,7 +373,7 @@ async def video_stream(c: Client, m: Message):
                         await m.reply_photo(
                             photo=image,
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"-› **اެبشࢪ عيني ضفتها ݪݪانتضاࢪ -› ** `{pos}`\n\n-› **اެݪاسم:** [{songname}]({url}) | `الفيديو`\n-› **اެݪمدةه:** `{duration}`\n-› **طݪب اެݪحݪۅ:** {requester}",
+                            caption=f"-› **ضيفتها يا حب في قائمة الانتظار  -› ** `{pos}`\n\n-› **اެݪاسم:** [{songname}]({url}) | `الفيديو`\n-› **اެݪمدةه:** `{duration}`\n-› **طݪب اެݪحݪۅ:** {requester}",
                         )
                         remove_if_exists(image)
                     else:
@@ -403,7 +403,7 @@ async def video_stream(c: Client, m: Message):
                         except (NoActiveGroupCall, GroupCallNotFound):
                             await loser.delete()
                             await remove_active_chat(chat_id)
-                            await m.reply_text("🦴 ماكو مكالمة شلون اشغل يلا اكتب.\n\n» هاي .اصعد وحاول مره اخرى !")
+                            await m.reply_text("🦴 مفيش مكالمة شغاله اشغل ازاي قولي.\n\n» هاي .اصعد وحاول مره اخرى !")
                         except NoVideoSourceFound:
                             await loser.delete()
                             await remove_active_chat(chat_id)
