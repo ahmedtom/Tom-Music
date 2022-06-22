@@ -187,7 +187,7 @@ async def new_chat(c: Client, m: Message):
             if member.id == me_bot.id:
                 return await m.reply(
                     "🎗️ وأخيرا ضفتوني ، طبعاً شكراً للي ضافني !\n\n"                 
-                    "👍🏻 @T_0_M_2 اضغط على زر الاوامر حتى تشوف شلون تشغلني يوزر مطور السورس ",
+                    "👍🏻  اضغط على زر الاوامر علشان تشوف ازاي تشغلني (سورس توم) ",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
@@ -195,6 +195,9 @@ async def new_chat(c: Client, m: Message):
                                 InlineKeyboardButton("-› الاوامر", callback_data="command_list")
                             ],[
                                 InlineKeyboardButton("-› حساب المساعد", url=f"https://t.me/{me_user.username}")
+                            ],[ InlineKeyboardButton("-›لتنصيب بوتك على السورس", url=f"http://t.me/a3_d57")
+                                InlineKeyboardButton("-› قناة السورس", url=f"http://t.me/Tom01255")
+                            ],[ InlineKeyboardButton("-›🦎 مطور السورس", url=f"http://t.me/T_0_M_2")
                             ]
                         ]
                     )
