@@ -83,8 +83,6 @@ async def _human_time_duration(seconds):
 async def start_(c: Client, message: Message):
     user_id = message.from_user.id
     await add_served_user(user_id)
-await message.reply_photo(
-        photo=f"https://telegra.ph//file/cdcf6e35335e7a01f0948.jpg")
     await message.reply_text(
         f"""ههݪاެ يا حب {message.from_user.mention()} ❤️‍🔥\n
  انا بوت لتشغيل الاغاني في المجموعات اعمل على سورس توم بمميزات عديدة
@@ -104,8 +102,10 @@ await message.reply_photo(
                     InlineKeyboardButton("طࢪيقة اެݪتشغيݪ", callback_data="user_guide")
                 ],[
                     InlineKeyboardButton("اެݪاۅاެمࢪ", callback_data="command_list"),
-                    InlineKeyboardButton("🦎 اެݪمطَۅࢪ", url=f"https://t.me/{OWNER_USERNAME}")                    
-                ],
+                    InlineKeyboardButton("🦎  اެݪمطَۅࢪ البوت", url=f"https://t.me/{OWNER_USERNAME}")                    
+                ],[
+                    InlineKeyboardButton("🦎 مطور السورس", url=f"http://t.me/T_0_M_2")
+                ]
             ]
         ),
         disable_web_page_preview=True,
@@ -187,7 +187,8 @@ async def new_chat(c: Client, m: Message):
             if member.id == me_bot.id:
                 return await m.reply(
                     "🎗️ وأخيرا ضفتوني ، طبعاً شكراً للي ضافني !\n\n"                 
-                    "👍🏻 اضغط على زر الاوامر حتى تشوف شلون تشغلني ",
+                    "👍🏻  اضغط على زر الاوامر حتى تشوف شلون تشغلني "
+                    ┣★[ᗪᗴᐯ. TOᗰ 𖢅](http://t.me/T_0_M_2),
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
