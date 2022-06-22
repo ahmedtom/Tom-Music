@@ -76,19 +76,22 @@ async def _human_time_duration(seconds):
     return ", ".join(parts)
 
 
-@Client.on_message(
-    command(["/start", f"/start@{BOT_USERNAME}"]) & filters.private & ~filters.edited
-)
-@check_blacklist()
-async def start_(c: Client, message: Message):
-    user_id = message.from_user.id
-    await add_served_user(user_id)
-    await message.reply_text(
-        f"""ههݪاެ يا حب {message.from_user.mention()} ❤️‍🔥\n
- انا بوت لتشغيل الاغاني في المجموعات اعمل على سورس توم بمميزات عديدة
--› [ᗪᗴᐯ. TOᗰ 𖢅](http://t.me/T_0_M_2)
--› [ᔕOᑌᖇᑕE TOᗰ 𖢅](http://t.me/Tom01255)
--› [لتنصيب بوتك على السورس  𖢅](http://t.me/a3_d57)
+@Client.on_message(command("start") & filters.private & ~filters.group & ~filters.edited)
+async def start_(client: Client, message: Message):
+    await message.delete()
+    await message.reply_sticker("CAACAgUAAxkBAAEENxZiNtPdibVkMsjLZrUG9NK4hotHQgAC2wEAAoM12VSdN9ujxVtnUyME")
+    await message.reply_photo(
+        photo=f"https://telegra.ph//file/cdcf6e35335e7a01f0948.jpg",
+        caption=f"""**━━━━━━━━━━━━━━━━━━
+💔 هلا عمري {message.from_user.mention()} !
+        انا بوت لتشغيل الموسيقى في المكالمات  الصوتيه اعمل على سورس توم
+┏━━━━━━━━━━━━━━┓
+┣★ نشكر كل مين اضاف
+┣★ [ᔕOᑌᖇᑕE TOᗰ](http://t.me/Tom01255)
+┣★ بوتات ســـورس توم
+┣★ [ᗪᗴᐯ. TOᗰ 𖢅](http://t.me/T_0_M_2)
+┣★ [لتنصيب بوتك على السورس  𖢅](http://t.me/a3_d57)
+┗━━━━━━━━━━━━━━┛
 """,
         reply_markup=InlineKeyboardMarkup(
             [
