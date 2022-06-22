@@ -76,10 +76,14 @@ async def _human_time_duration(seconds):
     return ", ".join(parts)
 
 
-@Client.on_message(command("start") & filters.private & ~filters.group & ~filters.edited)
-async def start_(client: Client, message: Message):
-    await message.delete()
-    await message.reply_sticker("CAACAgUAAxkBAAEENxZiNtPdibVkMsjLZrUG9NK4hotHQgAC2wEAAoM12VSdN9ujxVtnUyME")
+@Client.on_message(
+    command(["/start", f"/start@{BOT_USERNAME}"]) & filters.private & ~filters.edited
+)
+@check_blacklist()
+async def start_(c: Client, message: Message):
+    user_id = message.from_user.id
+    await add_served_user(user_id)
+    await message.reply_text(
     await message.reply_photo(
         photo=f"https://telegra.ph//file/cdcf6e35335e7a01f0948.jpg",
         caption=f"""**━━━━━━━━━━━━━━━━━━
